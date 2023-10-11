@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="com.astra.test">
+	<namespace>AstraTestProject</namespace>
+	<entity local-service="true" name="UserCompany" remote-service="false" uuid="true">
+
+		<!-- PK fields -->
+		<column name="userCompanyId" primary="true" type="long" />
+
+		<!-- Other fields -->
+		<column name="userId" type="long" />
+		<column name="email" type="String" />
+		<column name="fullName" type="String" />
+		<column name="screenName" type="String" />
+
+		<!-- Assigned Company -->
+		<column name="companyId" type="long" />
+		<column name="corporateId" type="long" />
+		<column name="divisionId" type="long" />
+		<column name="departmentId" type="long" />
+
+		<!-- Row Status -->
+		<column name="deleted" type="boolean" />
+
+		<!-- Audit fields -->
+		<column name="createBy" type="String" />
+		<column name="modifiedBy" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+	</entity>
+</service-builder>

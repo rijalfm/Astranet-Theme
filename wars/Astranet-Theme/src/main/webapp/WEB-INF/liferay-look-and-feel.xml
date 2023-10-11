@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.0.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_7_0_0.dtd">
+
+<look-and-feel>
+    <compatibility>
+        <version>7.4.0+</version>
+    </compatibility>
+    <theme id="astranet-theme" name="Astranet Theme">
+        <template-extension>ftl</template-extension>
+        <settings>
+            <setting configurable="true" key="footer-text" type="text" value="" />
+            <setting configurable="true" key="footer-text" type="text" value="" />
+            <setting configurable="true" key="is-home" type="checkbox" value="false" />
+            <setting configurable="true" key="wrap-widget-page-content" type="checkbox" value="true" />
+            <setting configurable="true" key="footer-social-cms-id" type="text" value="" />
+            <setting configurable="true" key="base-color" type="text" value="">
+                <![CDATA[
+				AUI().ready(
+					'aui-color-picker-popover',
+					function(A) {
+						var nodePicker = A.one("#[@NAMESPACE@]base-color");
+						nodePicker.setStyle('width', '120px');
+						nodePicker.setStyle('borderLeftWidth', '30px');
+						nodePicker.setStyle('borderLeftColor', nodePicker.get('value'));
+						nodePicker.setStyle('color', nodePicker.get('value'));
+
+						var colorPicker = new A.ColorPickerPopover({
+							trigger: nodePicker,
+							zIndex: 99
+						}).render();
+
+						colorPicker.on('select', function(event) {
+							var color = event.color;
+							event.trigger.set('value', color);
+							nodePicker.setStyle('borderLeftColor', color);
+							nodePicker.setStyle('color', color);
+							A.all('table .checkerNode').removeClass('btn-success');
+							A.one("#[@NAMESPACE@]palette-selector").set('value', '');
+						});
+					}
+				);
+			]]>
+            </setting>
+        </settings>
+
+        <portlet-decorator id="barebone" name="Barebone">
+            <default-portlet-decorator>true</default-portlet-decorator>
+            <portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
+        </portlet-decorator>
+        <portlet-decorator id="borderless" name="Borderless">
+            <portlet-decorator-css-class>portlet-borderless</portlet-decorator-css-class>
+        </portlet-decorator>
+        <portlet-decorator id="decorate" name="Decorate">
+            <portlet-decorator-css-class>portlet-decorate</portlet-decorator-css-class>
+        </portlet-decorator>
+    </theme>
+</look-and-feel>

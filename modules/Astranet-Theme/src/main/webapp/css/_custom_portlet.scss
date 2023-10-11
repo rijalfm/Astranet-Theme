@@ -1,0 +1,51 @@
+.portlet-layout {
+  .portlet {
+    .management-bar,
+    .navbar-underline {
+      > .container-fluid-max-xl {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .portlet-title-text {
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 2.2;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.portlet {
+  > .portlet-topper {
+    position: absolute;
+    top: -30px !important;
+    width: fit-content !important;
+    gap: 10px;
+    background-color: #ddd !important;
+    border-radius: 4px 4px 0 0 !important;
+
+    .portlet-name-text {
+      padding: 0 8px !important;
+    }
+
+    .portlet-title-default {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .portlet-topper-toolbar {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &:hover,
+  &.open {
+    > .portlet-topper {
+      z-index: 999;
+    }
+  }
+}

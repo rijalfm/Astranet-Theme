@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.astra.test.model.UserCompany">
+		<field name="uuid" type="String" />
+		<field name="userCompanyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="email" type="String" />
+		<field name="fullName" type="String" />
+		<field name="screenName" type="String" />
+		<field name="companyId" type="long" />
+		<field name="corporateId" type="long" />
+		<field name="divisionId" type="long" />
+		<field name="departmentId" type="long" />
+		<field name="deleted" type="boolean" />
+		<field name="createBy" type="String" />
+		<field name="modifiedBy" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>
